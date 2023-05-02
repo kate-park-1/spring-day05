@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 수정</title>
+</head>
+<body>
+  <h2>상품 내역 수정</h2>
+  <div th:object="${item}">
+    <div>
+      <label>상품ID</label>
+      <input type="text" th:name="id" th:text="*{id}" readonly>
+    </div>
+     <div>
+       <lable>상품명</lable>
+       <input type="text" th:name="userName" th:text="*{itemName}">
+     </div>
+    <div>
+      <lable>상품가격</lable>
+      <input type="text" th:name="price" th:text="*{price}">
+    </div>
+    <div>
+      <label>상품수량</label>
+      <input type="text" th:name="quantity" th:text="*{quantity}">
+    </div>
+
+    <div class="form-row float-center">
+      <button type="button" class="btn btn-primary" th:onclick="|location.href='@{/items/itemInfo?id=${id}}'|">이전으로</button>
+      <button type="button" class="btn btn-secondary" th:onclick="|location.href='@{/items/itemList}'|">상품 목록</button>
+    </div>
+  </div>
+</body>
+</html>

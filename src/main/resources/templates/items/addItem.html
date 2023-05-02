@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 등록</title>
+</head>
+<body>
+ <h2>상품 등록</h2>
+ <div class="mb-3">
+     <form th:action method="post">
+         <div>
+             <lable>상품명</lable>
+             <input type="text" class="form-control" th:name="userName">
+         </div>
+         <div>
+             <lable>상품가격</lable>
+             <input type="text" class="form-control" th:name="price">
+         </div>
+         <div>
+             <label>상품수량</label>
+             <input type="text" class="form-control" th:name="quantity">
+         </div>
+         <div class="form-row float-center">
+             <button type="submit" class="btn btn-primary" th:onclick="|location.href='@{/items/addItem}'|">상품 등록</button>
+             <button type="button" class="btn btn-secondary" th:onclick="|location.href='@{/items/itemList}'|">취소</button>
+         </div>
+     </form>
+  </div>
+</body>
+</html>
